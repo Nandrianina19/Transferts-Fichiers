@@ -32,7 +32,7 @@ public class Server {
 
         Socket socket=this.CreateSocket(port);
 
-        System.out.println("Envoie de fichier sur serveur3 en cours ...\n");
+        System.out.println("Envoie de fichier sur serveur en cours ...\n");
 
         DataOutputStream dataOutputStream=this.CreateOutputStream(socket);
         //initialisation de donnée
@@ -107,7 +107,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
 
         Server serv=new Server();
-        ServerSocket ss = new ServerSocket(7772);
+        ServerSocket ss = new ServerSocket(7773);
         System.out.println("connection...");
         Socket socket = ss.accept(); 
         System.out.println("Connection venant " + socket + "!");
@@ -127,9 +127,9 @@ public class Server {
         ss.close();
         socket.close();
 
-        serv.sendFileServer(7773);
 
     }
 }
 
+ 
  
