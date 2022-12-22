@@ -10,7 +10,6 @@ public class Server {
     private  Socket  CreateSocket(int port) throws IOException {
         // creation du socket dans le port 777
         Socket socket = new Socket("localhost", port);
-        System.out.println("\nConnected!\n");
 
         return socket;
     }
@@ -33,7 +32,7 @@ public class Server {
 
         Socket socket=this.CreateSocket(port);
 
-        System.out.println("Envoie de fichier sur serveur2 en cours ...\n");
+        System.out.println("Envoie de fichier sur serveur3 en cours ...\n");
 
         DataOutputStream dataOutputStream=this.CreateOutputStream(socket);
         //initialisation de donnée
@@ -100,7 +99,7 @@ public class Server {
             output.close();
 
         } catch (Exception e) {
-            System.out.println("Message erruer: " + e);
+            System.out.println("Message " + e);
         }
 
     }
@@ -108,8 +107,8 @@ public class Server {
     public static void main(String[] args) throws IOException {
 
         Server serv=new Server();
-        ServerSocket ss = new ServerSocket(7771);
-        System.out.println("attend du connection...");
+        ServerSocket ss = new ServerSocket(7772);
+        System.out.println("connection...");
         Socket socket = ss.accept(); 
         System.out.println("Connection venant " + socket + "!");
 
@@ -128,8 +127,9 @@ public class Server {
         ss.close();
         socket.close();
 
-        serv.sendFileServer(7772);
+        serv.sendFileServer(7773);
 
     }
 }
 
+ 
